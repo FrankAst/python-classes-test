@@ -1,0 +1,78 @@
+class Alumno:
+    def __init__(self,nota):
+        self.nombre = input("Cómo te llamas?? ")
+        self.nota = nota
+    def show(self):
+        print("Nombre: ", self.nombre)
+        print("nota: ", self.nota)
+        if self.nota >= 6:
+            print("Estas aprobado!!")
+        else:
+            print("No aprobaste 😢")
+
+Pepito123 = Alumno(4.5)
+Pepito123.show()
+
+class Persona:
+    def __init__(self,edad= None):
+        self.nombre = input("Cómo te llamas?? ")
+        self.edad= edad
+        if self.edad is None:
+            self.edad = int(input("Ingrese su edad: "))
+        else:
+            self.edad = edad
+    def show(self):
+        print("Nombre: ", self.nombre)
+        print("edad: ", self.edad)
+        if self.edad >= 18:
+            print("Sos mayor !! 😉🍻")
+        else:
+            print("te faltan ",18-self.edad,"añitos, toma 🍼")
+Pepe = Persona(14)
+Pepe.show()
+
+class Cuenta:
+    def __init__(self, titular, cantidad):
+        self.titular = titular
+        self.cantidad = cantidad
+    def show(self):
+        print("El titular es: ",self.titular)
+        print("Dispone de: $", self.cantidad)
+
+class CajaDeAhorro(Cuenta):
+    def __init(self):
+        super()._init_()
+    def show2(self):
+        super().show()
+        print("This an additional function")
+
+   class PlazoFijo():
+    def __init__(self,cuenta,plazo,interes):
+        #super().__init__()
+        self.cuenta = cuenta
+        self.plazo = plazo
+        self.interes = interes
+    def GetInterest(self):
+        int_total = (self.cuenta.cantidad * self.interes)
+        return int_total
+    def show(self):
+        self.cuenta.show()
+        self.GetInterest()
+        print("interes del plazo es: ",self.interes)
+        print("Intereses totales: $", self.GetInterest())
+        
+print("---------Cuenta------------\n")
+pepe = Cuenta("pepe",10000)
+pepe.show()
+
+print("\n")
+print("---------PlazoFijo------------\n")
+
+CajaPepe = PlazoFijo(pepe,3,.15)
+CajaPepe.show()
+
+print("\n")
+print("---------CajaDeAhorro-----------\n")
+
+CajaDeAhorroPepe = CajaDeAhorro("pepe",15000)
+CajaDeAhorroPepe.show2()
